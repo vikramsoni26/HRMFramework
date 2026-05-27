@@ -6,7 +6,8 @@ import org.testng.annotations.Test;
 import pageObjects.LoginPage;
 
 public class LoginTest extends BaseClass {
-
+                             // i used inheritance where login test extends baseclass to reuse browser setup and teardown
+                             // methods
     @Test
     public void verifyLogin()
     {
