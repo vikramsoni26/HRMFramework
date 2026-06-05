@@ -29,6 +29,15 @@ public class AddEmployeePage {
 
     private By txtPersonalDetails = By.xpath("//h6[text()='Personal Details']");
 
+    private By menuEmployeeList = By.xpath("//a[text()='Employee List']");
+
+    private By txtSearchName = By.xpath("(//input[@placeholder='Type for hints...'])[1]");
+
+    private By btnSearch = By.xpath("//button[@type='submit']");
+
+    private By recordFound = By.xpath("//div[@class='oxd-table-card']");
+
+
     // Methods
     // click on menuPIM Button
     public void clickPIM() {
@@ -64,6 +73,26 @@ public class AddEmployeePage {
     public boolean isPersonalDetailsDisplayed()
     {
         return driver.findElement(txtPersonalDetails).isDisplayed();
+    }
+
+    public void clickEmployeeList()
+    {
+        driver.findElement(menuEmployeeList).click();
+    }
+
+    public void searchEmployee(String empname)
+    {
+        driver.findElement(txtSearchName).sendKeys(empname);
+    }
+
+    public void clickSearch()
+    {
+        driver.findElement(btnSearch).click();
+    }
+
+    public boolean isRecordFound()
+    {
+        return driver.findElement(recordFound).isDisplayed();
     }
 }
 
